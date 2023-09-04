@@ -1,0 +1,231 @@
+body, html {
+    height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Миксины
+@mixin anim($time, $delay) {-webkit-transition: all $time ease $delay; -moz-transition: all $time ease $delay; -ms-transition: all $time ease $delay; -o-transition: all $time ease $delay; transition: all $time ease $delay;}
+@mixin anim_cubic ($time, $delay) {-webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay; -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay; -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay; -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay; transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;}
+@mixin rotate ($deg) {-webkit-transform: rotate($deg); -moz-transform: rotate($deg); -ms-transform: rotate($deg); -o-transform: rotate($deg); transform: rotate($deg);}
+@mixin scale ($num) {-webkit-transform: scale($num); -moz-transform: scale($num); -ms-transform: scale($num); -o-transform: scale($num); transform: scale($num);}
+@mixin skew ($num) {-webkit-transform: skewX($num); -moz-transform: skewX($num); -ms-transform: skewX($num); -o-transform: skewX($num); transform: skewX($num);}
+@mixin cnt($h) {display: flex; flex-direction: column; height: $h; text-align: center; align-items: stretch; justify-content: center;}
+@mixin tr($x, $y, $z) {transform: translate3d($x, $y, $z);}
+@mixin flexbox() {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; font-size: 0;}
+@mixin flexorder($val) {-webkit-box-ordinal-group: $val; -moz-box-ordinal-group: $val; -ms-flex-order: $val; -webkit-order: $val; order: $val;}
+
+// Шрифты
+
+// Подключаем шрифты
+
+//font-display: swap;
+
+// Шрифт по умолчанию
+
+$fontfamily: 'Inter', sans-serif;
+
+// Переменные
+
+$minwidth: 320px;
+$mw: 1240;
+$md1: $mw+12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+// Обнуление, общие параметры
+
+* {padding: 0; margin: 0; border: 0;}
+*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+:focus, :active {outline: none;}
+a:focus, a:active {outline: none;}
+aside, nav, footer, header, section {display: block;}
+html, body {height: 100%; margin: 0; padding: 0; min-width: $minwidth; position: relative; width: 100%; color: #131313;}
+body {font-size: 100%; line-height: 1; font-size: 14px; font-family: $fontfamily;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+    &.lock{overflow: hidden;
+        @media (max-width:$md3+px) {
+            width: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
+    }
+}
+input, button, textarea {font-family: $fontfamily;}
+input::-ms-clear {display: none;}
+button {cursor: pointer;}
+button::-moz-focus-inner {padding: 0; border: 0;}
+a, a:visited {text-decoration: none; color: inherit}
+a:hover {text-decoration: none;}
+ul li{list-style: none;}
+img {vertical-align: top;}
+h1, h2, h3, h4, h5, h6 {font-weight: inherit; font-size: inherit;}
+//-webkit-overflow-scrolling: touch;
+//animation-play-state: paused !important;
+
+// Оболочка
+
+.wrapper {width: 100%; min-height: 100%; overflow: hidden;
+    &.loaded{};
+}
+
+// Основная сетка
+
+[class*="__container"] {max-width: $mw+px; margin: 0 auto; width: 100%;
+    @media (max-width:$md1+px) {max-width: 970px;}
+    @media (max-width:$md2+px) {max-width: 750px;}
+    @media (max-width:$md3+px) {max-width: none; padding: 0 10px;}
+}
+
+// Подключение файлов, стилей, страниц и элементов
+//@import "header.scss";
+
+// Переменные
+
+$black: #131313;
+$white: #ffffff;
+$grey: #6F6F6F;
+$red: #FF4040;
+$blue: #0057FF;
+
+// Основной блок
+
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.button__header {
+    height: 40px;
+    width: 120px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin-left: 8px;
+    }
+}
+
+.button_blue {
+    background-color: #EAEAF9;
+    color: #5C5CD6;
+}
+
+.button_blue:hover {
+    background-color: #E0E0F6;
+}
+
+.button_orange {
+    background-color: #F9EEEA;
+    color: #D66B5C;
+}
+
+.button_orange:hover {
+    background-color: #FFE5DD;
+}
+
+.header-center{
+    display: flex;
+    justify-content: space-between;
+    width: 809px;
+}
+
+.input__block {
+    width: 551px;
+    height: 40px;
+    border-radius: 4px;
+    border: #D5D6D8 1px solid;
+    display: flex;
+    justify-content: space-between;
+    input {
+        margin-left: 16px;
+        width: 407px;
+    }
+    input::placeholder{
+        color: #747474;
+    }
+    button {
+        width: 83px;
+        height: 38px;
+        background-color: #F8F8F8;
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+.header__sign-in {
+    width: 90px;
+    height: 42px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    p {
+        margin-left: 13px;
+    }
+}
+
+.header__sign-in:hover {
+    background-color: #F1F1F2;
+    cursor: pointer;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.Cart {
+    margin-top: 30px;
+    width: 232px;
+    height: 100%;
+    img {
+        border-radius: 4px;
+    }
+    transition: box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+.Cart:hover {
+    -webkit-box-shadow: 4px 30px 40px -20px rgba(34, 60, 80, 0.14);
+    -moz-box-shadow: 4px 30px 40px -20px rgba(34, 60, 80, 0.14);
+    box-shadow: 4px 30px 40px -20px rgba(34, 60, 80, 0.14);
+    //box-shadow: 0px 10px 25px -16px rgba(0,0,0,.16), 0 25px rgba(0,0,0,.16);
+}
+
+.cart__bottom {
+    padding: 12px 8px 12px 8px;
+    font-size: 13px;
+    line-height: 115%;
+    .cart__country {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        color: #636363;
+    }
+    .cart__price {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+// Подключение файлов UI стилей, форм и готовых классов
+//@import "forms.scss";
+//@import "ui.scss";
