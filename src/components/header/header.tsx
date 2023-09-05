@@ -24,8 +24,21 @@ function Header() {
                 <p>Sign in</p>
             </div>
         </div>
+        <div className='header-bootom'>
+            <ul>
+                <li>Property</li>
+                <li>Auto and transport</li>
+                <li>Repair and construction</li>
+                <li>Hobbies, sports and tourism</li>
+                <li>Everything for children and mothers</li>
+                <li>Furniture</li>
+                <li>Women’s fashion</li>
+                <li>Animals</li>
+                <li>See all</li>
+            </ul>
+        </div>
     </header>
     )
 }
 
-export default Header
+export default Header;

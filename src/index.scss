@@ -186,16 +186,36 @@ $blue: #0057FF;
     cursor: pointer;
 }
 
-.main {
-    flex: 1 1 auto;
+.header-bootom {
+    ul {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.Cart {
+.main {
     margin-top: 30px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+.Cart {
+    margin-bottom: 30px;
     width: 232px;
     height: 100%;
-    img {
-        border-radius: 4px;
+    .scale {
+        border-radius: 8px;
+        display: block;
+        overflow: hidden;
+        img {
+            transition: all .25s;
+            display: block;
+        }
     }
     transition: box-shadow 0.3s ease;
 
@@ -207,6 +227,12 @@ $blue: #0057FF;
     -moz-box-shadow: 4px 30px 40px -20px rgba(34, 60, 80, 0.14);
     box-shadow: 4px 30px 40px -20px rgba(34, 60, 80, 0.14);
     //box-shadow: 0px 10px 25px -16px rgba(0,0,0,.16), 0 25px rgba(0,0,0,.16);
+    .scale {
+        border-radius: 8px 8px 0 0;
+        img {
+            transform: scale(1.025);
+        }
+    }
 }
 
 .cart__bottom {
@@ -225,6 +251,35 @@ $blue: #0057FF;
         font-weight: 500;
     }
 }
+
+.footer-bottom {
+    border-top: 1px #e4e4e5 solid;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 16px;
+    }
+    p {
+        font-size: 11px;
+    }
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    .qr {
+        width: 310px;
+        height: 146px;
+        border: 1px #e4e4e5 solid;
+        border-radius: 16px;
+    }
+}
+
 
 // Подключение файлов UI стилей, форм и готовых классов
 //@import "forms.scss";
