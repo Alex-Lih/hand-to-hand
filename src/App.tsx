@@ -3,14 +3,19 @@ import Header from './components/header/header'
 import Card from './components/card/card'
 import Menu from './components/menu/menu'
 import items from './assets/db.json'
+import React from "react"
 
 console.log(items);
 
 function App() {
-  return (
+    const [Visible, setVisible] = React.useState(false);
+
+    return (
     <>
-    <Menu />
-    <div className='wrapper'>
+    {Visible && (
+        <Menu />
+    )}
+    <div className='wrapper' onClick={() => setVisible(!Visible)}>
         <Header />
         <div className="main">
             {
