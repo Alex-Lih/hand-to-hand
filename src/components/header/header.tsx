@@ -24,6 +24,7 @@ function Header() {
                 <p>Sign in</p>
             </div>
         </div>
+        
         <div className='header-bootom'>
             <ul>
                 <li>Property</li>

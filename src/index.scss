@@ -280,6 +280,47 @@ $blue: #0057FF;
     }
 }
 
+.menu {
+    top: 75px;
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    .wrapper {
+        background-color: white;
+        padding-bottom: 20px;
+    }
+    .menu__categories {
+        width: 25%;
+        border-right: 1px #e4e4e5 solid;
+        li {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 500;
+            padding: 0 10px 0 10px;
+            cursor: pointer;
+            div {
+                display: flex;
+                align-items: center;
+                span {
+                    margin-left: 5px;
+                }
+            }
+        }
+        li:hover {
+            background-color: #F1F1F2;
+            border-radius: 4px 0 0 4px;
+        }
+    }
+}
+
+.shadow {
+    height: 120px;
+    background: linear-gradient(180deg,rgba(11,11,30,.3),rgba(11,11,30,.14) 30.21%,rgba(11,11,30,.05) 62.5%,rgba(11,11,30,0));
+}
+
 
 // Подключение файлов UI стилей, форм и готовых классов
 //@import "forms.scss";

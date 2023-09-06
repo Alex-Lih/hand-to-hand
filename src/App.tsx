@@ -1,27 +1,22 @@
 import './App.css'
 import Header from './components/header/header'
 import Card from './components/card/card'
+import Menu from './components/menu/menu'
+import items from './assets/db.json'
+
+console.log(items);
 
 function App() {
   return (
+    <>
+    <Menu />
     <div className='wrapper'>
         <Header />
         <div className="main">
-            <Card price={3725}/>
-            <Card price={34534}/>
-            <Card price={4554}/>
-            <Card price={5545}/>
-            <Card price={46}/>
-            <Card price={67}/>
-            <Card price={9999999}/>
-            <Card price={3756725}/>
-            <Card price={567567}/>
-            <Card price={667}/>
-            <Card price={500}/>
-            <Card price={499}/>
-            <Card price={677}/>
-            <Card price={665}/>
-            <Card price={55555}/>
+            {
+                items.map((obj)=> (
+                <Card {...obj}/>
+            ))}
         </div>
         <footer className='footer'>
             <div className="footer-top">
@@ -76,13 +71,14 @@ function App() {
             </div>
             <div className="footer-bottom">
                 <div className="footer-bottom-left">
-                    <a href='#'>Соглашение о конфиденциальности</a>
-                    <a href='#'>Пользовательское соглашение</a>
+                    <a href='#'>Privacy Policy</a>
+                    <a href='#'>Terms & Conditions</a>
                 </div>
                 <p className=''>«2023© ООО «КазаньЭкспресс». ИНН 1648054022. Все права защищены»</p>
             </div>
         </footer>
     </div>
+    </>
   )
 }
 
