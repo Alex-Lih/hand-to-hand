@@ -5,8 +5,6 @@ import Menu from './components/menu/menu'
 import items from './assets/db.json'
 import React from "react"
 
-console.log(items);
-
 function App() {
     const [Visible, setVisible] = React.useState(false);
 
@@ -15,8 +13,8 @@ function App() {
     {Visible && (
         <Menu />
     )}
-    <div className='wrapper' onClick={() => setVisible(!Visible)}>
-        <Header />
+    <div className='wrapper'>
+        <Header click={()=> setVisible(!Visible)} />
         <div className="main">
             {
                 items.map((obj)=> (

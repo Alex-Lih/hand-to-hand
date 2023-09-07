@@ -1,10 +1,14 @@
-function Header() {
+
+interface headerProps{
+    click: () => void;
+}
+function Header({click}:headerProps) {
     return (
     <header className='header'>
         <div className='header__all'>
             <img src='../src/images/logo.svg'></img>
             <div className='header-center'>
-                <button className='button__header button_blue'>
+                <button className='button__header button_blue' onClick={click}>
                     <img src='../src/images/menu.svg'></img>
                     <p>Categories</p>
                 </button>
